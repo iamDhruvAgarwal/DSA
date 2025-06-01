@@ -1,0 +1,41 @@
+to find if a number is prime or not
+we can check if any number that diivides the N in a particular range if the division is done then remainder must be 0
+so 
+for(int i =0; i< root N ; i++){
+if(N%==0)
+then there exist a number in range 0 to root N that divides N, so the number is not PRIME 
+}else{PRIME}
+
+
+========= Sieve of Eratosthenes ==========
+To find the prime numbers in a range from 1 to N - most basic use case of this algo
+logic discussed in class
+for(int i = 0; i<= N ; i++0{
+if(is prime(i) then add answer i)
+}
+example range 0 to 16
+0,1,2,3........16
+so if 2 is prime so all the multiples of 2 must not be prime as if X is prime and X is a factor of Y then Y has a factor other then Y and 1 
+so Y is not prime 
+hence 4,6,8,.... are not prime 
+so some number can be left unmarked so that means for ex 11 had no factor from 1 to 10 so it is left as prime as they were not marked because the range was insufficient, so if 11 does not have any factor other then 11 and 1 in range of 1 to 11 then obviously it is prime as a factor is always lesser then the N hence 11 is surely prime. 
+
+class logic
+
+vector<bool> 
+
+
+for(i = 2; i<= root N ; i++){
+if(isprime(i)) is true{
+then for(j = i*i; j <=N ; j+=i){
+isPrime[j] = false //we are elminating the multiples of prime number i in the list
+}
+}
+
+
+
+any number greater then root N is already out of range as root n * root n would be n so anything greater then that would be out of range 
+for ex 180 so root N is 13.... so if we take 14 then 14*14 is beyond range as it's 196 hence run loop till root N only
+
+i*i as i*2 or anything with i*(less then i) would already be marked not prime by smaller prime numbers
+for ex 7*2 would already be marked not prime because of 2 and hence from 7*(2-6) all will be not prime hence we start with 7*7 to mark the multiples of 7 as not prime 

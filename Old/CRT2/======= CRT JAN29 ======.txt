@@ -1,0 +1,6 @@
+======= CRT JAN29 ======
+BIT MANIPULATION
+when the bits exceed 64 no. then we won't be able to convert binary to decimal and then calculate the result and transition to binary again, so we need a different approch
+
+if we borrow in decimal we get 10 and addition of the place we are borrowing but in binary we get the power 2 as borrow like if it was 10 then if we borrow 1 we will be getting 1x2^1 as borrow which is 10 itself we take 11 as borrow on the place we borrowwed 
+so if subtract 0001 from 1000 then we have to borrow 11 from msb to lsb so we will get 0 1 1 1 after the process as 1 1 0 - 1 will be 1 at the lsb 

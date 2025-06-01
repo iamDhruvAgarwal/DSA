@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	string str;
+	//cin >> str;
+	//cout << str;
+	int decimal,pos;
+	cin >> decimal;
+	vector<int> v;
+	pos = 0;
+	int n;
+	n = str.length();
+//	decimal = pos;
+	
+	for(int i = str.size() - 1; i >= 0; i--){
+		decimal  += (str[i] - '0')*pow(2,pos);
+		pos++;
+	}
+	while(n > 0){
+	int dec;
+	dec = n%2;
+	v.push_back(dec);	
+		dec /= 2;
+		//v.push_back(n);
+	}
+	//cout << decimal << endl;
+	for(int i = n; i > 0 ; i--){
+		cout << v[i];
+	}
+	return 0;
+}
+
+
+================================================
+
+
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string f(int dec){
+	if(n == 0 ){
+		return "0"
+	}
+	char rem = (n%2 + '0');
+	return f(n/2) + rem;
+}
+int main(){
+    int dec;
+    cout<<"Enter the decimal number : ";
+    cin>>dec;
+    string bin = "";
+//    while(dec > 0){
+//        bin += ('0' + dec % 2);
+//        dec = dec / 2;
+//    }
+    reverse(bin.begin(), bin.end());
+    cout<<<<endl;
+    return 0;
+}
+

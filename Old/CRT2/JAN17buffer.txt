@@ -1,0 +1,67 @@
+======Failed due to errors========
+class Solution {
+public: 
+int N; 
+        N = n;
+        int Prime[N];
+        for(int i = 0; i < sqrt(N); i++){
+            if(N%i == 0){
+                Prime[i] = 1;
+            }
+        }
+    }
+    int countPrimes(int n) {
+        
+int count = 0;
+
+        for(int i = 1 ; i < sqrt(n); i++ ){
+            if(isPrime(i)){
+                for(int j = i*i ; j <= n; j++){
+                    Prime[j] = 0;
+                }
+            }
+        }
+        for(int i = 0 ; i < n; i++){
+            if(Prime[i] == 1){
+                count++;
+            }
+        }
+        return count;
+    }
+};
+
+
+
+
+=========Correct Approch========
+wasnt able to notedown though we were wrong as we didnt consider the limiting case of n = 0 or n = 1 as in both of these cases the the returned value will be 0
+class Solution {
+public: 
+int N; 
+        N = n;
+        int Prime[N];
+        for(int i = 0; i < sqrt(N); i++){
+            if(N%i == 0){
+                Prime[i] = 1;
+            }
+        }
+    }
+    int countPrimes(int n) {
+        
+int count = 0;
+
+        for(int i = 1 ; i < sqrt(n); i++ ){
+            if(isPrime(i)){
+                for(int j = i*i ; j <= n; j++){
+                    Prime[j] = 0;
+                }
+            }
+        }
+        for(int i = 0 ; i < n; i++){
+            if(Prime[i] == 1){
+                count++;
+            }
+        }
+        return count;
+    }
+};

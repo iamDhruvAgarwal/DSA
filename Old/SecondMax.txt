@@ -1,0 +1,193 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+// } Driver Code Ends
+// User function template for C++
+class Solution {
+  public:
+  
+    // Function returns the second
+    // largest elements
+    int getSecondLargest(vector<int> &arr) {
+        if(arr.size() < 2){
+            return -1 ;
+        }
+        // Code Here
+        int count = 1;
+        for(int i = 0; i < arr.size(); i++){
+            for(int j =0; j < arr.size() - 1; j++){
+                if(arr[j] < arr[j+1]){
+                    swap(arr[j],arr[j+1]);
+                }
+            }
+    }
+    // sort(arr);
+    for(int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
+    if(arr[i] == arr[i + 1]){
+        count++;
+    }else if(count > arr.size()){
+        count = -1;
+    }else{
+        break;
+    }
+    }
+    return arr[count];
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    cin.ignore();
+    while (t--) {
+        vector<int> arr;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int number;
+        while (ss >> number) {
+            arr.push_back(number);
+        }
+        Solution ob;
+        int ans = ob.getSecondLargest(arr);
+        cout << ans << endl;
+        cout << "~" << endl;
+    }
+    return 0;
+}
+
+// } Driver Code Ends
+
+
+========= Correct Approch that worked ==========
+
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+// } Driver Code Ends
+// User function template for C++
+class Solution {
+  public:
+  
+    // Function returns the second
+    // largest elements
+    int getSecondLargest(vector<int> &arr) {
+        if(arr.size() < 2){
+            return -1 ;
+        }
+        // Code Here
+        int count = 1;
+    //     for(int i = 0; i < arr.size(); i++){
+    //         for(int j =0; j < arr.size() - 1; j++){
+    //             if(arr[j] < arr[j+1]){
+    //                 swap(arr[j],arr[j+1]);
+    //             }
+    //         }
+    // }
+     sort(arr.begin(), arr.end(), greater<int>());
+    for(int i = 0; i < arr.size(); i++){
+    if(arr[i] != arr[i + 1]){
+        return arr[i + 1];
+     }
+    //else if(count > arr.size()){
+    //     count = -1;
+    // }else{
+    //     break;
+    // }
+    }
+    return -1;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    cin.ignore();
+    while (t--) {
+        vector<int> arr;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int number;
+        while (ss >> number) {
+            arr.push_back(number);
+        }
+        Solution ob;
+        int ans = ob.getSecondLargest(arr);
+        cout << ans << endl;
+        cout << "~" << endl;
+    }
+    return 0;
+}
+
+// } Driver Code Ends
+
+
+
+============ GFG Best Approch ===========
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+// } Driver Code Ends
+// User function template for C++
+class Solution {
+  public:
+    int getSecondLargest(vector<int> &arr) {
+        if(arr.size() < 2){
+            return -1 ;
+        }
+        int first = -10000;
+        int second = -10000;
+    for(int i = 0; i < arr.size(); i++){
+    if(arr[i] > first){
+        second = first;
+        first = arr[i];
+     }else if(arr[i] > second && arr[i] != first){
+         second = arr[i];
+     }
+    }
+    if(second > 0){
+        return second;
+    }else{
+    return -1;
+    }
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    cin.ignore();
+    while (t--) {
+        vector<int> arr;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int number;
+        while (ss >> number) {
+            arr.push_back(number);
+        }
+        Solution ob;
+        int ans = ob.getSecondLargest(arr);
+        cout << ans << endl;
+        cout << "~" << endl;
+    }
+    return 0;
+}
+
+// } Driver Code Ends

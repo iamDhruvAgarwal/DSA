@@ -1,0 +1,33 @@
+======= CRT JAN31 ======
+BIT Manipulation- how to set or flip a bit 
+2^k > sumation of 2^i where i =0 to i = k-1
+so if there is a num that is represented as 00010000 i.e 2^24 so if we try to get a number that equate 2^24 here no other possible cominations are avaialable because binary representation is already made by 2^0 to 2^n so for a unique representation of unique power of 2 like 2 ^24 there exist no possible binary combination to denote it other then 0000 1 000000... 
+
+100001000010001 = n1 
+000100000000000 = n2
+here if we take (i << 10) so this number denotes n2 
+hence if we do AND with n1 of n2 the ans will be dependent on the ith bit that is 1 i.e the 10th bit in above example so the entire ans depends on that particlar bit 
+
+here n is n1 and (1 << i) is n2
+for(int i = 0; i < 31 ; i++){
+if(n & (1 << i)){
+count++;
+} // if(+ve) = true 
+}
+if(count == 1){
+return true
+}else{
+false
+}
+
+
+n & (1 << i) if this return 1 that means the n is a num of power 2 
+
+
+2nd way 
+
+
+
+for(i < = log(n) ; i < 31 ; i++){
+same logic as above 
+}
