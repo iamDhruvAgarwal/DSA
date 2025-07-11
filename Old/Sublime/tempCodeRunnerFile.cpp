@@ -1,4 +1,2 @@
-f ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
+ead, 360);
+    // print(head);
