@@ -148,6 +148,18 @@ Node * insertbeforeKth(Node* head, int k, int val){
 }
 
 
+Node *reverseDLL(Node * head){
+    Node * curr = head;
+    Node * prev = NULL;
+    while(curr != nullptr){
+        prev = curr->back;
+        curr->back = curr->next;
+        curr->next = prev;
+        curr = curr->back;
+    }
+    return prev->back;
+}
+
 int main() {
 	// your code goes here
 #ifndef ONLINE_JUDGE
@@ -157,13 +169,7 @@ int main() {
 	vector<int> arr = {10,12,2,3,4};
 	Node * head = convertArr2DLL(arr);
     print(head);
-    // head = insertHead(head, 4);
-    // print(head);
-    // head = insertTail(head, 360);
-    // print(head);
-    // head = insertbeforeTail(head, 330);
-    // print(head);
-    head = insertbeforeKth(head, 5, 45);
+    head = reverseDLL(head);
     print(head);
 	return 0;
 }
